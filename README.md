@@ -12,7 +12,7 @@ Diferentemente dos estudos existentes, que avaliam LLMs com *queries* genéricas
 
 ---
 
-## Modelos avaliados
+## Modelos a serem avaliados
 
 | Domínio | Open-source | Closed-source |
 |---|---|---|
