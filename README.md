@@ -1,75 +1,136 @@
-# Red Teaming Automatizado de LLMs em Domínios Críticos
+# Red Teaming Automatizado de Large Language Models em Domínios Críticos: Uma Abordagem de Avaliação de Vulnerabilidades Domain-Aware
 
-> Research on automated red teaming of Large Language Models in critical domains (health, financial, legal) using a domain-aware vulnerability assessment approach.
+## 📌 Descrição do Projeto
+Este repositório contém os artefatos desenvolvidos para o Trabalho de Conclusão de Curso (TCC) do curso de Engenharia de Software da PUC Minas.
 
----
+A pesquisa investiga vulnerabilidades de segurança em Large Language Models (LLMs) por meio de técnicas de Red Teaming Automatizado Domain-Aware aplicadas a domínios críticos, como saúde, financeiro e jurídico.
 
-## Sobre a pesquisa
-
-A pesquisa investiga vulnerabilidades de Modelos de Linguagem de Grande Escala (*Large Language Models* — LLMs) em domínios críticos — saúde, financeiro e jurídico — por meio de uma abordagem de *red teaming* automatizado sensível ao contexto de aplicação (*domain-aware*).
-
-Diferentemente dos estudos existentes, que avaliam LLMs com *queries* genéricas e foco predominante em ataques *prompt-based*, este trabalho aplica três famílias de ataque — *prompt-based*, *optimization-based* (GCG) e *multi-turn* — sobre modelos especializados por domínio, comparando pares open-source e closed-source.
+O estudo busca analisar como diferentes famílias de ataques adversariais impactam modelos open-source e closed-source, avaliando a robustez dos mecanismos atuais de defesa em contextos de alta criticidade.
 
 ---
 
-## Modelos a serem avaliados
-
-| Domínio | Open-source | Closed-source |
-|---|---|---|
-| Saúde | MedLLaMA | Med-PaLM 2 |
-| Financeiro | FinMA | BloombergGPT |
-| Jurídico | SaulLM-7B | GPT-4 |
+## 👨‍🎓 Alunos
+- Pedro Arthur Oliveira Silva
+- Kaio Henrique Silveira
 
 ---
 
-## Metodologia
-
-1. **Preparação e Dataset** — construção de *queries* adversariais com critérios de violação calibrados por domínio
-2. **Execução do Red Teaming** — aplicação dos 3 tipos de ataque sobre pares open/closed por domínio
-3. **Ciclo de Ataques e Refinamento** — loop iterativo com registro de ASR por domínio
-4. **Análise e Resultados** — comparação *cross-domínio* e *cross-modelo* com proposta de mitigações *domain-aware*
-
----
-
-## Métricas
-
-| Métrica | Descrição |
-|---|---|
-| **ASR** | *Attack Success Rate* — taxa de sucesso dos ataques adversariais |
-| **TR** | Transferabilidade — eficácia do ataque em modelos distintos do original |
-| **Stealthiness** | Similaridade do prompt adversarial com inputs benignos (escala 1–5) |
-| **FPR** | *False Positive Rate* — taxa de queries legítimas bloqueadas incorretamente |
-
----
-
-## Famílias de ataque
-
-- **Prompt-based** — role-play, inversão de instrução e manipulação de contexto
-- **Optimization-based (GCG)** — sufixos adversariais otimizados por busca gulosa para maximizar ASR
-- **Multi-turn** — conversas persistentes de 8+ turnos que degradam progressivamente o alinhamento do modelo
-
----
-
-## Referências principais
-
-- Niloy et al. (2025) — *Jailbreaking Large Language Models: A Red Teaming Perspective*. IEEE COMPAS.
-- Knowlton et al. (2026) — *Prompt-Based Jailbreaking of Leading LLM Chatbots: A Survey of Attacks and Defenses*. IEEE Transactions on Artificial Intelligence.
-- Greshake et al. (2023) — *Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection*. ACM AISec.
-- Goh et al. (2025) — *Scaling Responsible Generative AI: Automating Red Teaming of LLM Applications*. IEEE CAI.
-- Segireddy (2025) — *LLM-Driven Automated Penetration Testing: Architectures, Benchmarks, and Safety Considerations*. IEEE ICSSS.
-
----
-
-## Autores
-
-**Alunos**
-- Kaio H. Silveira
-- Pedro A. Oliveira
-
-**Orientadores**
+## 👨‍🏫 Orientadores
 - Cleiton Silva Tavares
 - Danilo de Quadros Maia Filho
 - João Pedro Oliveira Batisteli
 - Leonardo Vilela Cardoso
 
-**Instituição:** PUC Minas — Bacharelado em Engenharia de Software — 2026
+---
+
+## 🎯 Objetivo Geral
+Avaliar vulnerabilidades de Large Language Models por meio de red teaming automatizado domain-aware em domínios críticos.
+
+---
+
+## 🎯 Objetivos Específicos
+- Desenvolver um dataset de queries adversariais específicas para saúde, finanças e direito.
+- Avaliar a eficácia comparativa de ataques Prompt-Based, Optimization-Based e Multi-Turn.
+- Comparar vulnerabilidades entre modelos open-source e closed-source.
+- Identificar diferenças de comportamento entre domínios críticos.
+- Propor diretrizes de mitigação baseadas nas vulnerabilidades identificadas.
+
+---
+
+## 🔬 Problema de Pesquisa
+Grande parte da literatura atual avalia vulnerabilidades em LLMs utilizando queries genéricas, sem considerar particularidades semânticas, regulatórias e contextuais de domínios críticos.
+
+Dessa forma, surge a seguinte questão de pesquisa:
+
+> Como a eficácia de ataques de jailbreak varia entre domínios críticos e em que medida as defesas atuais são insuficientes nesses contextos?
+
+---
+
+## 🧠 Fundamentação da Pesquisa
+A pesquisa se fundamenta em conceitos de:
+
+- Engenharia de Software
+- Segurança de Software
+- Red Teaming Automatizado
+- Jailbreaking de LLMs
+- Adversarial Attacks
+- Prompt Injection
+- Avaliação Experimental de IA
+
+A proposta aplica princípios de Engenharia de Software, como automação, experimentação controlada e uso de métricas quantitativas para avaliar LLMs como componentes críticos de software.
+
+---
+
+## 📊 Métricas Avaliadas
+Os experimentos utilizarão as seguintes métricas:
+
+- ASR (Attack Success Rate)
+- Transferability
+- Stealthiness
+- FPR (False Positive Rate)
+
+---
+
+## 🧪 Metodologia
+A pesquisa segue uma abordagem experimental quantitativa composta por quatro etapas principais:
+
+1. Preparação do Dataset Domain-Aware
+2. Execução do Red Teaming Automatizado
+3. Ciclo de Ataques e Refinamento
+4. Análise Cross-Domínio e Cross-Modelo
+
+---
+
+## 🧱 Estrutura do Repositório
+
+```bash
+📁 Artigo/
+ ├── Referencias/
+ ├── PDF/
+ ├── Overleaf/
+ 
+📁 Divulgação/
+ ├── Apresentação/
+ 
+📁 Dataset/
+
+📁 Experimentos/
+
+📁 Documentação/
+
+README.md
+📄 Slides da Apresentação
+
+Os slides do projeto encontram-se em:
+
+Divulgação/Apresentação/
+📑 Documento no Overleaf
+
+https://www.overleaf.com/read/ckbgyyffdghv#2318d4
+
+📚 Trabalhos Relacionados
+
+Os principais trabalhos utilizados como base para esta pesquisa incluem:
+
+Niloy et al. (2025)
+Knowlton et al. (2026)
+Yang et al. (2025)
+Chao et al. (2025)
+Segireddy (2025)
+
+Os artigos encontram-se disponíveis na pasta:
+
+Artigo/Referencias/
+🛠 Tecnologias e Ferramentas
+Python
+Jupyter Notebook
+HuggingFace
+OpenAI API
+LaTeX
+Overleaf
+🏫 Instituição
+
+Pontifícia Universidade Católica de Minas Gerais (PUC Minas)
+
+Curso: Engenharia de Software
+Ano: 2026
