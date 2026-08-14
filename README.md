@@ -106,7 +106,7 @@ Os slides do projeto encontram-se em:
 Divulgação/Apresentação/
 📑 Documento no Overleaf
 
-https://www.overleaf.com/read/ckbgyyffdghv#2318d4
+https://www.overleaf.com/read/ctryrxdcmkwv#9f087b
 
 📚 Trabalhos Relacionados
 
